@@ -13,26 +13,14 @@ namespace ClassWork_02
             //Console.WriteLine(CompareAndCalculate(A, B));
             //Console.WriteLine(OrderingNumbers(A, B, C));
             //Console.WriteLine(QuadraticEquation(A, B, C));
-            //SwitchExample();
             Console.WriteLine(NumberInWords(A));
-           
-            //Number(A);
         }
 
-        static void Number (int num)
-        {
-            int num1 = num / 10;
-            int num2 = num % 10;
-
-            Console.WriteLine($"num1 = {num1}, num2 = {num2}");
-
-        }
+       
         static string NumberInWords(int number)
         {
             string numString = "";
-            string frstString = "";
-            string secdString = "";
-
+           
             int num1 = number / 10;
             int num2 = number % 10;
             
@@ -71,7 +59,6 @@ namespace ClassWork_02
                         numString = "Nineteen";
                         break;
                 }
-
                 return (numString);
             }
             else 
@@ -104,36 +91,42 @@ namespace ClassWork_02
                         break;
                 }
 
-                //numString = frstString + secdString;
+                switch (num2)
+                {
+                    case 0:
+                        return (numString);
+                    case 1:
+                        numString = numString + " one";
+                        break;
+                    case 2:
+                        numString = numString + " two";
+                        break;
+                    case 3:
+                        numString = numString + " three";
+                        break;
+                    case 4:
+                        numString = numString + " four";
+                        break;
+                    case 5:
+                        numString = numString + " five";
+                        break;
+                    case 6:
+                        numString = numString + " six";
+                        break;
+                    case 7:
+                        numString = numString + " seven";
+                        break;
+                    case 8:
+                        numString = numString + " eight";
+                        break;
+                    case 9:
+                        numString = numString + " nine";
+                        break;
+                }
                 return (numString);
             }
         }
-
-        static void SwitchExample()
-        {
-            Console.WriteLine("Enter 1 for task 1");
-            Console.WriteLine("Enter 2 for task 2");
-            Console.WriteLine("Enter 3 for task 3");
-
-            int choise = Convert.ToInt32(Console.ReadLine());
-
-            switch (choise)
-            {
-                case 1:
-                    Console.WriteLine(1);
-                    break;
-                case 2:
-                    Console.WriteLine(2);
-                    break;
-                case 3:
-                    Console.WriteLine(3);
-                    break;
-                default:
-                    Console.WriteLine("Default");
-                    break;
-            }
-        }
-
+       
         static (double x1, double x2) QuadraticEquation(int a, int b, int c)
         {
             double discriminant = b * b - 4 * a * c;
@@ -167,7 +160,6 @@ namespace ClassWork_02
 
             return (a, b, c);
         }
-
         static string CoordinateQuarter(int x, int y)
         {
             if (x > 0 && y > 0)
@@ -203,9 +195,5 @@ namespace ClassWork_02
                 return a - b;
             }
         }
-
-        
-
-        
     }
 }
