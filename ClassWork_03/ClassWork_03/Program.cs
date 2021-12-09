@@ -42,19 +42,19 @@ namespace ClassWork_03
 
         static int Task4(int a)
         {
-            int maxDevider = a;
+            int maxDivider = a;
 
-            for (int i = 2; i < maxDevider; i++)
+            for (int i = 2; i < maxDivider; i++)
             {
                 if (a % i == 0)
                 {
-                    maxDevider = a / i;
+                    maxDivider = a / i;
                     break;
                 }
-                maxDevider--;
+                maxDivider--;
             }
 
-            return maxDevider;
+            return maxDivider;
         }
 
         static int Task5(int a, int b)
