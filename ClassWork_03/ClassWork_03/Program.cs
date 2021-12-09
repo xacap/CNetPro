@@ -7,8 +7,9 @@ namespace ClassWork_03
         static void Main(string[] args)
         {
             int A = Convert.ToInt32(Console.ReadLine());
+            //int B = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine(Task8(A)); 
+            Console.WriteLine(Task4(A)); 
         }
 
         static int Task1(int a, int b)
@@ -41,18 +42,16 @@ namespace ClassWork_03
 
         static int Task4(int a)
         {
-            int maxDevider = 0;
+            int maxDevider = a;
 
-            for (int i = 2; i < Math.Sqrt(a); i++)
+            for (int i = 2; i < maxDevider; i++)
             {
-                int remainder;
-                remainder = a % i;
-
-                if (remainder == 0)
+                if (a % i == 0)
                 {
                     maxDevider = a / i;
                     break;
                 }
+                maxDevider--;
             }
 
             return maxDevider;
@@ -62,42 +61,41 @@ namespace ClassWork_03
         {
             int sum = 0;
 
-            if (a < b)
+            if (a > b)
             {
-                for (int i = a; i <= b; i++)
-                {
-                    if (i % 7 == 0)
-                    {
-                        sum += i;
-                    }
-                }
-            }
-            else
-            {
-                for (int i = a; i >= b; i--)
-                {
-                    if (i % 7 == 0)
-                    {
-                        sum += i;
-                    }
-                }
+                Swap(ref a, ref b);
             }
 
+            for (int i = a; i <= b; i++)
+            {
+                if (i % 7 == 0)
+                {
+                    sum += i;
+                }
+            }
+            
             return sum;
+        }
+
+        static void Swap(ref int a, ref int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
         }
 
         static int Task6(int a)
         {
             int result = 0;
             int i = 1;
-            int n1 = 0;
-            int n2 = 1;
+            int prewNum = 0;
+            int nextNum = 1;
 
             while (i < a)
             {
-                result = n1 += n2;
-                n1 = n2;
-                n2 = result;
+                result = prewNum += nextNum;
+                prewNum = nextNum;
+                nextNum = result;
 
                 i++;
             }
@@ -107,7 +105,6 @@ namespace ClassWork_03
 
         static int Task7 (int a, int b)
         {
-            int resultNOD;
 
             while ((a != 0) && (b != 0))
             {
@@ -120,9 +117,8 @@ namespace ClassWork_03
                     b -= a;
                 }
             }
-            resultNOD = Math.Max(a,b);
 
-            return resultNOD;
+            return a + b;
         }
 
         static int Task8(int a)
@@ -140,17 +136,13 @@ namespace ClassWork_03
             return result;
         }
 
-
         static int Task9(int a)
         {
             int result = 0;
-            int remainder;
 
             while (a != 0)
             {
-                remainder = a % 10;
-
-                if (remainder % 2 != 0)
+                if ((a % 10) % 2 != 0)
                 {
                     result++;
                 }
@@ -176,7 +168,7 @@ namespace ClassWork_03
             return reverse;
         }
 
-        static string Task12(int a, int b)
+        static bool Task12(int a, int b)
         {
             int remainder;
 
@@ -188,7 +180,7 @@ namespace ClassWork_03
                 {
                     if (b % 10 == remainder)
                     {
-                        return "Yes";
+                        return true;
                     }
 
                     b /= 10;
@@ -197,7 +189,7 @@ namespace ClassWork_03
                 a /= 10;
             }
 
-            return "No";
+            return false;
         }
     }
 }
