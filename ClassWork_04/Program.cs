@@ -83,14 +83,9 @@ namespace ClassWork_04
 
         static void ReverseArray(int[] mArray)
         {
-            for (int i = 0, j = mArray.Length-1; i < mArray.Length /2; i++, j--)
+            for (int i = 0, j = mArray.Length - 1; i < mArray.Length / 2; i++, j--)
             {
                 Swap(ref mArray[i], ref mArray[j]);
-            }
-            
-            for (int i = 0; i < mArray.Length; i++)
-            {
-                Console.Write($"{mArray[i]} ");
             }
         }
 
@@ -100,7 +95,7 @@ namespace ClassWork_04
 
             for (int i = 0; i < mArray.Length; i++)
             {
-                if (mArray[i] % 2 != 0)
+                if (mArray[i] % 2 == 1)
                 {
                     count++;
                 }
@@ -111,21 +106,14 @@ namespace ClassWork_04
 
         static void SwapHalfArrey(int[] mArray)
         {
-
-            for (int i = 0, j = mArray.Length/2 + mArray.Length % 2; i < mArray.Length / 2; i++, j++)
+            for (int i = 0, j = mArray.Length / 2 + mArray.Length % 2; i < mArray.Length / 2; i++, j++)
             {
                 Swap(ref mArray[i], ref mArray[j]);
-            }
-
-            for (int i = 0; i < mArray.Length; i++)
-            {
-                Console.Write($"{mArray[i]} ");
             }
         }
 
         static void SortArrayInsert(int [] mArray)
         {
-            
             for(int i = 1; i < mArray.Length; i++)
             {
                 int temp = mArray[i];
@@ -133,22 +121,16 @@ namespace ClassWork_04
 
                 while (j > 0 && mArray[j - 1] > temp)
                 {
-                    Swap(ref mArray[j-1], ref mArray[j]);
+                    Swap(ref mArray[j - 1], ref mArray[j]);
                     j--;
                 }
 
                 mArray[j] = temp;
             }
-
-            for (int i = 0; i < mArray.Length; i++)
-            {
-                Console.Write($"{mArray[i]} ");
-            }
         } 
 
         static void SortingArraySelect(int[] mArray)
         {
-
             for (int i = 0; i < mArray.Length - 1; i++)
             {
                 int minInd = i;
@@ -164,11 +146,6 @@ namespace ClassWork_04
                         Swap(ref mArray[i], ref mArray[minInd]);
                     }
                 }
-            }
-
-            for (int i = 0; i < mArray.Length; i++)
-            {
-                Console.Write($"{mArray[i]} ");
             }
         }
 
