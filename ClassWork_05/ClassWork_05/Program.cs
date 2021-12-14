@@ -8,13 +8,15 @@ namespace ClassWork_05
         {
             int[,] array = new int[4, 4] 
             {
-                {97, 56, 78, 12},
-                {45, 6, 53, 29},
-                {8, 29, 71 ,88},
-                {2, 999, 1, 21}
+                {97, 56, 78, 18},
+                {45, 6,  53, 66},
+                {8,  29, 71, 33},
+                {22, 77, 88, 44 }
             };
 
-            Console.WriteLine(CountMaxesValue(array));
+            DiagonalReflection(array);
+            //ArrayOutput(array);
+            //Console.WriteLine(CountMaxesValue(array));
         }
 
         static int FindMinElement(int[,] mArray)
@@ -126,6 +128,38 @@ namespace ClassWork_05
             }
 
             return count;
+        }
+
+        static void DiagonalReflection(int [,] arr)
+        {
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = i + 1; j < arr.GetLength(1); j++)
+                {
+                    Swap(ref arr[i, j], ref arr[j, i]);
+                }
+            }
+
+            ArrayOutput(arr);
+        }
+
+        static void Swap (ref int a, ref int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+
+        static void ArrayOutput (int [,] arr)
+        {
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write(arr[i, j] + $"  " );
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
