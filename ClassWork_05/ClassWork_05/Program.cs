@@ -14,7 +14,7 @@ namespace ClassWork_05
                 {22, 77, 88, 44 }
             };
 
-            DiagonalReflection(array);
+            //DiagonalReflection(array);
             //ArrayOutput(array);
             //Console.WriteLine(CountMaxesValue(array));
         }
