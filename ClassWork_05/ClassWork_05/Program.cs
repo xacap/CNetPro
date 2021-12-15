@@ -6,13 +6,7 @@ namespace ClassWork_05
     {
         static void Main(string[] args)
         {
-            int[,] array = new int[4, 4] 
-            {
-                {71, 56, 78, 18},
-                {45, 6,  53, 66},
-                {8,  29, 99, 33},
-                {22, 77, 88, 44 }
-            };
+            
         }
 
         static int GetMinElement(int[,] mArray)
