@@ -6,21 +6,29 @@ namespace ClassWork_05
     {
         static void Main(string[] args)
         {
-            
+            int[,] array = new int[4, 4]
+            {
+                {71, 56, 78, 18},
+                {45, 6,  53, 66},
+                {8,  29, 71, 33},
+                {22, 77, 88, 44 }
+            };
+
+            Console.WriteLine(GetMaxElement(array));
         }
 
         static int GetMinElement(int[,] mArray)
         {
-            int minValue = mArray[GetIndexMinValue(mArray).i, GetIndexMinValue(mArray).j];
+            (int i, int j) = GetIndexMaxValue(mArray);
 
-            return minValue;
+            return mArray[i, j];
         }
 
         static int GetMaxElement(int[,] mArray)
         {
-            int maxValue = mArray[GetIndexMaxValue(mArray).i, GetIndexMaxValue(mArray).j];
+            (int i, int j) = GetIndexMaxValue(mArray);
 
-            return maxValue;
+            return mArray[i, j];
         }
 
         static (int i, int j) GetIndexMinValue(int[,] mArray)
