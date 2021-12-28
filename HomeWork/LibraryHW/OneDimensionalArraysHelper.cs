@@ -8,14 +8,14 @@ namespace LibraryHW
     {
         public static int FindMinElement(int[] mArray)
         {
-            if (mArray == null || mArray.Length == 0)
+            if (mArray == null)
             {
                 throw new ArgumentException("Missing array!");
             }
 
             int minValue = mArray[0];
 
-            for (int i = 1; i < mArray.Length; i++)
+            for (int i = 0; i < mArray.Length; i++)
             {
                 if (mArray[i] < minValue)
                 {
@@ -28,14 +28,14 @@ namespace LibraryHW
 
         public static int FindMaxElement(int[] mArray)
         {
-            if (mArray == null || mArray.Length == 0)
+            if (mArray == null)
             {
                 throw new ArgumentException("Missing array!");
             }
 
             int maxValue = mArray[0];
 
-            for (int i = 1; i < mArray.Length; i++)
+            for (int i = 0; i < mArray.Length; i++)
             {
                 if (mArray[i] > maxValue)
                 {
@@ -105,7 +105,7 @@ namespace LibraryHW
 
         public static void ReverseArray(int[] mArray)
         {
-            if (mArray == null || mArray.Length < 2)
+            if (mArray == null)
             {
                 throw new ArgumentException("Missing array!");
             }
@@ -138,7 +138,7 @@ namespace LibraryHW
 
         public static void SwapHalfArrey(int[] mArray)
         {
-            if (mArray == null || mArray.Length < 2)
+            if (mArray == null)
             {
                 throw new ArgumentException("Missing array!");
             }
@@ -151,7 +151,7 @@ namespace LibraryHW
 
         public static void SortArrayInsert(int[] mArray)
         {
-            if (mArray == null || mArray.Length < 2)
+            if (mArray == null)
             {
                 throw new ArgumentException("Missing array!");
             }

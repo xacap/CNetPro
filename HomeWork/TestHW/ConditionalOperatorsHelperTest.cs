@@ -89,6 +89,52 @@ namespace TestHW
             }
             Assert.Fail();
         }
+
+        [TestCase(2, 9, 3, -16.55, -1.45)]
+        public void QuadraticEquation_ShouldResult(
+            double a,
+            double b,
+            double c,
+            double q,
+            double w
+            )
+        {
+            var expectedResoult = (q,w);
+            var actualResoult = ConditionalOperatorsHelper.QuadraticEquation(a,b,c);
+            Assert.AreEqual(expectedResoult, actualResoult);
+        }
+
+        [Test]
+        public void QuadraticEquation_WhenNoSolution_ShoulArgumenException()
+        {
+            try
+            {
+                ConditionalOperatorsHelper.QuadraticEquation(0, 66, 77);
+                ConditionalOperatorsHelper.QuadraticEquation(55, 66, 77);
+            }
+            catch (ArgumentException ex)
+            {
+                Assert.AreEqual("The equation has no solution!", ex.Message);
+                Assert.Pass();
+            }
+           
+            Assert.Fail();
+        }
+
+        [Test]
+        public void QuadraticEquation_WhenAEqualToZero_ShoulArgumenException()
+        {
+            try
+            {
+                ConditionalOperatorsHelper.QuadraticEquation(0, 66, 77);
+            }
+            catch (ArgumentException ex)
+            {
+                Assert.AreEqual("A equals to Zero!", ex.Message);
+                Assert.Pass();
+            }
+            Assert.Fail();
+        }
     }
 
 

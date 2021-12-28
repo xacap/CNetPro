@@ -121,10 +121,22 @@ namespace LibraryHW
 
         public static (double x1, double x2) QuadraticEquation(double a, double b, double c)
         {
+            if (a == 0)
+            {
+                throw new ArgumentException("A equals to Zero!");
+            }
+
             double discriminant = b * b - 4 * a * c;
+
+            if (discriminant < 0)
+            {
+                throw new ArgumentException("The equation has no solution!");
+            }
 
             double x1 = (-b - Math.Sqrt(discriminant)) / 2 * a;
             double x2 = (-b + Math.Sqrt(discriminant)) / 2 * a;
+            x1 = Math.Round(x1, 3);
+            x2 = Math.Round(x2, 3);
 
             return (x1, x2);
         }

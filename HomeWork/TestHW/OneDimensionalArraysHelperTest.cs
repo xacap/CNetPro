@@ -11,7 +11,7 @@ namespace TestHW
         [TestCase(new int[] { 1, 2 }, 1)]
         [TestCase(new int[] { 5, 6, 2 }, 2)]
 
-        public void FindMinElement__WhenArrayIsFilled_ShouldMinValue(
+        public void FindMinElement_WhenArrayNotNull_ShouldMinValue(
         int[] sourseArray,
         int minValue)
         {
@@ -21,10 +21,10 @@ namespace TestHW
         }
 
         [Test]
-        public void FindMinElement_WhenArrayMissing_ShouldNullReferenceException()
+        public void FindMinElement_WhenArrayNull_ShouldArgumentException()
         {
-            int [] arr = null;
-            
+            int[] arr = null;
+
             try
             {
                 OneDimensionalArraysHelper.FindMinElement(arr);
@@ -36,7 +36,31 @@ namespace TestHW
             }
             Assert.Fail();
         }
-            
-        
+
+        [TestCase(new int[] { 0, 1 }, 1)]
+        [TestCase(new int[] { 1, 2, 3, 4, 5 }, 5)]
+        public void FindMaxElement_WhenArrayNotNull_ShouldMinValue(
+        int[] sourseArray,
+        int minValue)
+        {
+            int actialResult = OneDimensionalArraysHelper.FindMaxElement(sourseArray);
+            Assert.AreEqual(minValue, actialResult);
+        }
+
+        [Test]
+        public void FindMaxElementArray_WhenArrayNull_ShouArgumentExeption()
+        {
+            int[] array = null;
+            try
+            {
+                OneDimensionalArraysHelper.FindMinElement(array);
+            }
+            catch (ArgumentException ex)
+            {
+                Assert.AreEqual("Missing array!", ex.Message);
+                Assert.Pass();
+            }
+            Assert.Fail();
+        }
     }
 }

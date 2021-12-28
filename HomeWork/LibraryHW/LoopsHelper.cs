@@ -16,7 +16,7 @@ namespace LibraryHW
             return result;
         }
 
-        public static int Task3(int a)
+        public static int NumbersCount(int a)
         {
             int result = 0;
             int i = 1;
@@ -32,8 +32,13 @@ namespace LibraryHW
             return count;
         }
 
-        public static int Task4(int a)
+        public static int MaxDivider(int a)
         {
+            if (a == 0)
+            {
+                throw new ArgumentException("A equals to Zero!");
+            }
+
             int maxDivider = a;
 
             for (int i = 2; i < maxDivider; i++)
@@ -69,16 +74,23 @@ namespace LibraryHW
             return sum;
         }
 
-        public static int Task6(int a)
+        public static int FibonacciSeries(int a)
         {
             int result = 0;
             int i = 1;
             int prewNum = 0;
             int nextNum = 1;
+            int max = int.MaxValue;
 
             while (i < a)
             {
                 result = prewNum += nextNum;
+
+                if (result > max + 1)
+                {
+                    throw new OverflowException("Value Owerflow Int32!");
+                }
+
                 prewNum = nextNum;
                 nextNum = result;
 
@@ -88,9 +100,12 @@ namespace LibraryHW
             return result;
         }
 
-        public static int Task7(int a, int b)
+        public static int MaxCommonDevider(int a, int b)
         {
-
+            if (a < 0 || b < 0)
+            {
+                throw new ArgumentException("Negative value inserted!");
+            }
             while ((a != 0) && (b != 0))
             {
                 if (a > b)
@@ -106,7 +121,7 @@ namespace LibraryHW
             return a + b;
         }
 
-        public static int Task8(int a)
+        public static int Task8(int a) 
         {
             int result = 0;
             int count = 0;
@@ -121,7 +136,7 @@ namespace LibraryHW
             return result;
         }
 
-        public static int Task9(int a)
+        public static int GetCountOddNumbers(int a)
         {
             int result = 0;
 
@@ -137,7 +152,7 @@ namespace LibraryHW
             return result;
         }
 
-        public static int Task10(int a)
+        public static int MirroredSequence(int a)
         {
             int remainder;
             int reverse = 0;
@@ -153,8 +168,13 @@ namespace LibraryHW
             return reverse;
         }
 
-        public static bool Task12(int a, int b)
+        public static bool ChekingIdenticalNumbers(int a, int b)
         {
+            if (a == 0 || b == 0)
+            {
+                throw new ArgumentException("A and B are equal to zero!");
+            }
+
             int remainder;
 
             while (a != 0)
