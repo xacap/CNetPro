@@ -6,6 +6,11 @@ namespace LibraryHW
     {
         public static int GetMinElement(int[,] mArray)
         {
+            if (mArray == null || mArray.Length == 0)
+            {
+                throw new ArgumentException("Array is null or array length equal to zero!");
+            }
+
             (int i, int j) = GetIndexMaxValue(mArray);
 
             return mArray[i, j];
@@ -13,6 +18,11 @@ namespace LibraryHW
 
         public static int GetMaxElement(int[,] mArray)
         {
+            if (mArray == null || mArray.Length == 0)
+            {
+                throw new ArgumentException("Array is null or array length equal to zero!");
+            }
+
             (int i, int j) = GetIndexMaxValue(mArray);
 
             return mArray[i, j];
@@ -20,6 +30,11 @@ namespace LibraryHW
 
         public static (int i, int j) GetIndexMinValue(int[,] mArray)
         {
+            if (mArray == null || mArray.Length == 0)
+            {
+                throw new ArgumentException("Array is null or array length equal to zero!");
+            }
+
             int i = 0;
             int j = 0;
 
@@ -40,6 +55,11 @@ namespace LibraryHW
 
         public static(int i, int j) GetIndexMaxValue(int[,] mArray)
         {
+            if (mArray == null || mArray.Length == 0)
+            {
+                throw new ArgumentException("Array is null or array length equal to zero!");
+            }
+
             int i = 0;
             int j = 0;
 
@@ -60,6 +80,11 @@ namespace LibraryHW
 
         public static int CountMaxesValue(int[,] mArray)
         {
+            if (mArray == null)
+            {
+                throw new ArgumentNullException("Array is null!");
+            }
+
             int count = 0;
 
             for (int y = 0; y < mArray.GetLength(0); y++)
@@ -95,6 +120,11 @@ namespace LibraryHW
 
         public static void DiagonalReflection(int[,] arr)
         {
+            if (arr == null || arr.GetLength(0) != arr.GetLength(1))
+            {
+                throw new ArgumentException("Array is null or GetLengths no equal!");
+            }
+
             for (int i = 0; i < arr.GetLength(0); i++)
             {
                 for (int j = i + 1; j < arr.GetLength(1); j++)

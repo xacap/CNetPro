@@ -6,11 +6,11 @@ namespace LibraryHW
 {
     public class OneDimensionalArraysHelper
     {
-        public static int FindMinElement(int[] mArray)
+        public static int GetMinElement(int[] mArray)
         {
-            if (mArray == null)
+            if (mArray == null || mArray.Length == 0)
             {
-                throw new ArgumentException("Missing array!");
+                throw new ArgumentException("Missing array or array length equal to zero!");
             }
 
             int minValue = mArray[0];
@@ -26,11 +26,11 @@ namespace LibraryHW
             return minValue;
         }
 
-        public static int FindMaxElement(int[] mArray)
+        public static int GetMaxElement(int[] mArray)
         {
-            if (mArray == null)
+            if (mArray == null || mArray.Length == 0)
             {
-                throw new ArgumentException("Missing array!");
+                throw new ArgumentException("Missing array or array length equal to zero!");
             }
 
             int maxValue = mArray[0];
@@ -46,11 +46,11 @@ namespace LibraryHW
             return maxValue;
         }
 
-        public static int FindMinIndex(int[] mArray)
+        public static int GetIndexMinElement(int[] mArray)
         {
             if (mArray == null || mArray.Length == 0)
             {
-                throw new ArgumentException("Missing array!");
+                throw new ArgumentException("Missing array or array length equal to zero!");
             }
 
             int minInd = 0;
@@ -66,11 +66,11 @@ namespace LibraryHW
             return minInd;
         }
 
-        public static int FindMaxIndex(int[] mArray)
+        public static int GetIndexMaxElement(int[] mArray)
         {
             if (mArray == null || mArray.Length == 0)
             {
-                throw new ArgumentException("Missing array!");
+                throw new ArgumentException("Missing array or array length equal to zero!");
             }
 
             int maxInd = 0;
@@ -86,9 +86,9 @@ namespace LibraryHW
             return maxInd;
         }
 
-        public static int SumOddIndex(int[] mArray)
+        public static int SumElementsWithOddIndex(int[] mArray)
         {
-            if (mArray == null || mArray.Length == 0)
+            if (mArray == null)
             {
                 throw new ArgumentException("Missing array!");
             }
@@ -140,7 +140,7 @@ namespace LibraryHW
         {
             if (mArray == null)
             {
-                throw new ArgumentException("Missing array!");
+                throw new ArgumentNullException("Array is null!");
             }
 
             for (int i = 0, j = mArray.Length / 2 + mArray.Length % 2; i < mArray.Length / 2; i++, j++)
@@ -153,7 +153,7 @@ namespace LibraryHW
         {
             if (mArray == null)
             {
-                throw new ArgumentException("Missing array!");
+                throw new ArgumentNullException("Array is null!");
             }
 
             for (int i = 1; i < mArray.Length; i++)
@@ -173,9 +173,9 @@ namespace LibraryHW
 
         public static void SortingArraySelect(int[] mArray)
         {
-            if (mArray == null || mArray.Length < 2)
+            if (mArray == null)
             {
-                throw new ArgumentException("Missing array!");
+                throw new ArgumentNullException("Array is null!");
             }
 
             for (int i = 0; i < mArray.Length - 1; i++)

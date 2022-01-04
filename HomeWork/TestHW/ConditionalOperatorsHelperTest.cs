@@ -109,7 +109,6 @@ namespace TestHW
         {
             try
             {
-                ConditionalOperatorsHelper.QuadraticEquation(0, 66, 77);
                 ConditionalOperatorsHelper.QuadraticEquation(55, 66, 77);
             }
             catch (ArgumentException ex)

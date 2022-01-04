@@ -85,14 +85,13 @@ namespace LibraryHW
             while (i < a)
             {
                 result = prewNum += nextNum;
+                prewNum = nextNum;
+                nextNum = result;
 
-                if (result > max + 1)
+                if (nextNum > max - nextNum)
                 {
                     throw new OverflowException("Value Owerflow Int32!");
                 }
-
-                prewNum = nextNum;
-                nextNum = result;
 
                 i++;
             }

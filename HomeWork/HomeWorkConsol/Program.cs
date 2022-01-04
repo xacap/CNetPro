@@ -12,10 +12,11 @@ namespace HomeWorkConsol
             //double y1 = Convert.ToDouble(Console.ReadLine());
             //double x2 = Convert.ToDouble(Console.ReadLine());
             //double y2 = Convert.ToDouble(Console.ReadLine());
-            int a = Convert.ToInt32(Console.ReadLine());
-            int b = Convert.ToInt32(Console.ReadLine());
+            //int a = Convert.ToInt32(Console.ReadLine());
+            //int b = Convert.ToInt32(Console.ReadLine());
+            int[,] arr = { {  }, {  } };
 
-            Console.WriteLine(LoopsHelper.ChekingIdenticalNumbers(a,b));
+            Console.WriteLine(TwoDimensionalArraysHelper.GetIndexMinValue(arr));
         }
     }
 }
